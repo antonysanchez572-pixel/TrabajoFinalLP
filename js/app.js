@@ -15,7 +15,7 @@ document.getElementById('inscripcionForm').addEventListener('submit', function(e
     const formData = new FormData(this);
 
     // Envío por AJAX hacia send_mail.php
-    fetch('send_mail.php', {
+    fetch('php/enviar.php', {
         method: 'POST',
         body: formData
     })
@@ -32,7 +32,7 @@ document.getElementById('inscripcionForm').addEventListener('submit', function(e
         } else {
             Swal.fire({
                 icon: 'error',
-                title: 'Error al procesar',
+                title: 'Error al enviar',
                 text: 'Hubo un inconveniente al enviar la información. Inténtelo de nuevo.',
                 confirmButtonColor: '#d33'
             });

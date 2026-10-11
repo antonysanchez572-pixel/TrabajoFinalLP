@@ -1,10 +1,10 @@
 :root {
-    --header-bg: #521d28;       /* Color guinda principal */
+    --header-bg: #521d28;       
     --header-text: #ffffff;
-    --title-yellow: #fde047;     /* Amarillo brillante de alta combinación */
-    --section-title: #781d2c;   /* Color guinda para los subtítulos internos */
+    --title-yellow: #fde047;     
+    --section-title: #781d2c;   
     --input-bg: #f9fafb;        /* Fondo gris muy claro */
-    --input-border: #d1d5db;    /* Borde gris */
+    --input-border: #d1d5db;    
     --text-dark: #1f2937;
     --text-muted: #9ca3af;
     --card-bg: #ffffff;
