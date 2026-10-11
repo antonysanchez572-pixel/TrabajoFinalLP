@@ -1,1 +1,244 @@
-/* prueba */
+:root {
+    --header-bg: #521d28;       /* Color guinda principal */
+    --header-text: #ffffff;
+    --title-yellow: #fde047;     /* Amarillo brillante de alta combinación */
+    --section-title: #781d2c;   /* Color guinda para los subtítulos internos */
+    --input-bg: #f9fafb;        /* Fondo gris muy claro */
+    --input-border: #d1d5db;    /* Borde gris */
+    --text-dark: #1f2937;
+    --text-muted: #9ca3af;
+    --card-bg: #ffffff;
+    --font-family: 'Poppins', sans-serif;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    background-color: #3b141d;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 850px;
+    background-color: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ENCABEZADO MEJORADO */
+.header-banner {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #781d2c;
+}
+
+.header-text h1 {
+    color: var(--title-yellow);
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header-text h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.header-text p {
+    font-size: 13px;
+    color: #f3f4f6;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.header-logo {
+    text-align: right;
+}
+
+.senati-badge {
+    display: inline-block;
+    background: #ffffff;
+    color: var(--header-bg);
+    font-weight: 800;
+    font-size: 20px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.header-logo small {
+    display: block;
+    color: #fde047;
+    font-size: 12px;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* CONTENIDO DEL FORMULARIO */
+.form-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-title {
+    color: var(--section-title);
+    font-size: 17px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--section-title);
+    padding-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* FILAS Y GRUPOS */
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-2 > .form-group { flex: 1; }
+.flex-3 > .form-group { flex: 1; }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.align-center {
+    align-items: center;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: var(--radius);
+    padding: 11px 14px;
+    font-size: 13px;
+    color: var(--text-dark);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--section-title);
+    box-shadow: 0 0 0 3px rgba(120, 29, 44, 0.12);
+}
+
+/* RADIO BUTTONS INLINE */
+.radio-inline {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 6px;
+}
+
+.radio-inline label {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* BOTÓN DE ENVIAR */
+.btn-container {
+    margin-top: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--header-bg);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 6px 15px rgba(82, 29, 40, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: var(--section-title);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .header-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+    
+    .header-logo {
+        text-align: left;
+    }
+
+    .form-content {
+        padding: 25px 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

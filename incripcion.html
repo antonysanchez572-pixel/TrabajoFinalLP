@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario de Inscripción - SENATI</title>
+    
+    <!-- Fuente Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="CSS/styles.css">
+
+    <!-- Librería SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <h1>prueba</h1>
+
+    <div class="card-container">
+        <!-- Encabezado Estilo Guinda -->
+        <header class="header-banner">
+            <div class="header-text">
+                <h1>Formulario de</h1>
+                <h2>Inscripción Curso</h2>
+            </div>
+        </header>
+
+        <!-- Formulario -->
+        <form id="inscripcionForm" class="form-content">
+            
+            <!-- SECCIÓN 1: DATOS PERSONALES -->
+            <section class="form-section">
+                <h3 class="section-title">Información Personal</h3>
+                
+                <div class="row flex-3">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="segundo_nombre">Segundo Nombre:</label>
+                        <input type="text" id="segundo_nombre" name="segundo_nombre" placeholder="Segundo nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Apellido paterno y materno" required>
+                    </div>
+                </div>
+
+                <div class="row flex-2 align-center">
+                    <div class="form-group">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Género:</label>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
+                            <label><input type="radio" name="genero" value="Femenino"> Femenino</label>
+                            <label><input type="radio" name="genero" value="Otro"> Otro</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: DIRECCIÓN Y UBICACIÓN -->
+            <section class="form-section">
+                <h3 class="section-title">Dirección de Domicilio</h3>
+                
+                <div class="form-group">
+                    <label for="direccion_1">Dirección de la Calle:</label>
+                    <input type="text" id="direccion_1" name="direccion_1" placeholder="Av. / Calle / Mz. y Lt." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion_2">Dirección Línea 2 (Opcional):</label>
+                    <input type="text" id="direccion_2" name="direccion_2" placeholder="Dpto / Interior / Piso">
+                </div>
+
+                <div class="row flex-3">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado / Provincia:</label>
+                        <input type="text" id="estado" name="estado" placeholder="Provincia / Departamento" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal:</label>
+                        <input type="text" id="codigo_postal" name="codigo_postal" placeholder="Código postal" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: CONTACTO Y CURSO -->
+            <section class="form-section">
+                <h3 class="section-title">Información de Contacto y Académica</h3>
+                
+                <div class="row flex-2">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Número de Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="(000) 000-0000" required>
+                    </div>
+                </div>
+
+                <div class="row flex-2">
+                    <div class="form-group">
+                        <label for="empresa">Empresa u Organización:</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+                    </div>
+                    <div class="form-group">
+                        <label for="curso">Curso a Inscribirse:</label>
+                        <select id="curso" name="curso" required>
+                            <option value="">Seleccione un curso</option>
+                            <option value="Desarrollo Web Full Stack">Desarrollo Web Full Stack</option>
+                            <option value="PHP y Bases de Datos">PHP y Bases de Datos</option>
+                            <option value="JavaScript Avanzado">JavaScript Avanzado</option>
+                            <option value="Diseño UI/UX">Diseño UI/UX</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Ha recibido otros cursos anteriormente?</label>
+                    <div class="radio-inline">
+                        <label><input type="radio" name="cursos_previos" value="Si" required> Sí</label>
+                        <label><input type="radio" name="cursos_previos" value="No"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios Adicionales:</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" placeholder="Escriba cualquier comentario o inquietud..."></textarea>
+                </div>
+            </section>
+
+            <!-- Botón de Envío -->
+            <div class="btn-container">
+                <button type="submit" class="btn-submit">ENVIAR INSCRIPCIÓN</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="js/app.js"></script>
 </body>
 </html>
